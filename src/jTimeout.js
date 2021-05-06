@@ -178,7 +178,7 @@
                     timeout.setMouseTimeout(window.setTimeout(function ()
                     {
                         //on mouse move
-                        $('body').on('mousemove.jTimeout', function ()
+                        $('body').on('mousemove.jTimeout touchmove touchstart touchend click', function ()
                         {
                             if (!timeout.mouseMoved && timeout.resetOnAlert())
                             {
@@ -287,7 +287,8 @@
         mouseDebounce: 30, //How many seconds between extending the session when the mouse is moved (instead of extending a billion times within 5 seconds)
         onMouseMove: function(timeout){
             //request the session extend page
-            $.get({
+            $.ajax({
+                method: 'get',
                 url: timeout.options.extendUrl,
                 cache: false,
                 success: function(){
@@ -337,7 +338,8 @@
         //override the click to extend button callback
         onClickExtend: function(timeout){
             /* Request dashboard to increase session */
-            $.get({
+            $.ajax({
+                method: 'get',
                 url: timeout.options.extendUrl,
                 cache: false
             });
