@@ -306,7 +306,7 @@
         onPriorCallback: function(timeout, seconds){
             $.jAlert({
                 'id': 'jTimeoutAlert',
-                'title': 'Oh No!',
+                'title': 'Alert!',
                 'content': '<b>Your session will timeout in <span class="jTimeout_Countdown">' + seconds + '</span> seconds!</b>',
                 'theme': 'red',
                 'closeBtn': false,
@@ -350,7 +350,7 @@
             /* Alert User */
             $.jAlert({
                 'id': 'jTimedoutAlert',
-                'title': 'Oh No!',
+                'title': 'Timed out!',
                 'content': '<b>Your session has timed out.</b>',
                 'theme': 'red',
                 'btns': {
